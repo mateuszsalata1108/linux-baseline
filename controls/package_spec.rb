@@ -107,3 +107,12 @@ control 'package-09' do
     it { should_not be_installed }
   end
 end
+
+control 'package-10' do
+  impact 1.0
+  title 'Antivirus installed'
+  desc 'Checks if ClamAV antivirus is installed'
+  describe package('clamav') do
+    it { should be_installed }
+  end
+end
